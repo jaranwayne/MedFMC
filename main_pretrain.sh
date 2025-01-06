@@ -1,0 +1,14 @@
+CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 main_pretrain.py  --batch_size 704 \
+    --world_size 2 \
+    --accum_iter 1 \
+    --model mae_vit_base_patch16 \
+    --mask_ratio 0.75 \
+    --norm_pix_loss \
+    --start_epoch 0 \
+    --epochs 801 \
+    --output_dir ./output_dir_phase1_c1 \
+    --warmup_epochs 15 \
+    --blr 1.5e-4  \
+    --weight_decay 0.05 \
+    --resume checkpoint/mae_pretrain_vit_base_full.pth \
+    --data_path /data/to/path/images256/
