@@ -1,0 +1,7 @@
+[prompt]
+width = 256
+height = 256
+scale = 7
+sample_steps = 28
+[[prompt.subset]]
+prompt = "A colour fundus photogyraphy retinal image"
